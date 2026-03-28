@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="tr"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
       tailwind.config = {
@@ -85,92 +83,106 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full flex justify-between items-center px-8 h-20 bg-[#131313] z-50">
-  <button class="md:hidden flex items-center justify-center text-on-surface hover:text-primary-container transition-colors">
-  <span class="material-symbols-outlined text-3xl">menu</span>
-</button>
-<div class="text-3xl font-black text-[#D72323] tracking-tighter headline-font uppercase">
-            TR-FORUM
-        </div>
-<div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] font-bold tracking-tighter uppercase">
-<a class="text-[#E6BDB8] hover:text-white transition-colors" href="index.html">Anasayfa</a>
-<a class="text-[#E6BDB8] hover:text-white transition-colors" href="Topluluklar.html">Taraftar Grupları</a>
-<a class="text-[#D72323] border-b-4 border-[#D72323] pb-1" href="Etkinlikler.html">Etkinlikler</a>
-<a class="text-[#E6BDB8] hover:text-white transition-colors" href="medya.html">Medya</a>
-</div>
-<div class="flex items-center gap-6">
-<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">notifications</span>
-<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">person</span>
-<a class="bg-[#D72323] text-white px-6 py-2 text-sm font-black transition-transform active:scale-95" href="üyelik.html">ÜYE OL!</a>
-</div>
+
+<nav class="fixed top-0 w-full flex justify-between items-center px-4 md:px-8 h-20 bg-[#131313] z-[60] border-b border-surface-variant/30">
+  <div class="flex items-center gap-2 md:gap-3">
+    <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center text-[#E6BDB8] hover:text-[#D72323] transition-colors focus:outline-none p-1">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+    <div class="text-2xl md:text-3xl font-black text-[#D72323] tracking-tighter headline-font uppercase">
+      TR-FORUM
+    </div>
+  </div>
+
+  <div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] font-bold tracking-tighter uppercase">
+    <a class="text-[#E6BDB8] hover:text-white transition-colors" href="index.html">Anasayfa</a>
+    <a class="text-[#E6BDB8] hover:text-white transition-colors" href="Topluluklar.html">Taraftar Grupları</a>
+    <a class="text-[#D72323] border-b-4 border-[#D72323] pb-1" href="Etkinlikler.html">Etkinlikler</a>
+    <a class="text-[#E6BDB8] hover:text-white transition-colors" href="medya.html">Medya</a>
+  </div>
+
+  <div class="flex items-center gap-3 md:gap-6">
+    <div class="hidden md:flex gap-4">
+      <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">notifications</span>
+      <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">person</span>
+    </div>
+    <a class="bg-[#D72323] text-white px-4 md:px-6 py-2 text-xs md:text-sm font-black transition-transform active:scale-95 whitespace-nowrap" href="üyelik.html">ÜYE OL!</a>
+  </div>
 </nav>
+
+<div id="mobile-menu" class="hidden fixed top-20 left-0 w-full bg-[#131313] border-b-4 border-[#D72323] z-[50] flex-col items-center py-8 gap-6 shadow-2xl md:hidden transition-all">
+    <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors w-3/4 text-center pb-2 border-b border-surface-variant/30" href="index.html">Anasayfa</a>
+    <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors w-3/4 text-center pb-2 border-b border-surface-variant/30" href="Topluluklar.html">Taraftar Grupları</a>
+    <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#D72323] border-b-2 border-[#D72323] pb-2 w-3/4 text-center" href="Etkinlikler.html">Etkinlikler</a>
+    <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors w-3/4 text-center pb-2" href="medya.html">Medya</a>
+    
+    <div class="flex gap-8 mt-4">
+        <span class="material-symbols-outlined text-2xl text-[#E6BDB8] cursor-pointer hover:text-[#D72323]">notifications</span>
+        <span class="material-symbols-outlined text-2xl text-[#E6BDB8] cursor-pointer hover:text-[#D72323]">person</span>
+    </div>
+</div>
+
 <main class="pt-20">
-<!-- Hero Section: Event Focus -->
-<section class="relative w-full h-[614px] flex items-end overflow-hidden">
+<section class="relative w-full min-h-[60svh] md:h-[614px] flex items-end overflow-hidden">
 <div class="absolute inset-0 bg-cover bg-center" data-alt="dramatic wide shot of a crowded football stadium at night with red flares lighting up the dark stands and smoke rising" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmu5weRfDcTY-2Cwl3iMruxW0FnqbIRcXuQz8qip8HeOXBvhY43AVxlSbpb09dGQuEO3qsjixNHApvzbFt1OdixPqCPDJPbr2ehdVkgh3dRmaMwntpM1_Hcul_MRpnFsXk4xyjxKuFqx9itZSRQNhFf2_SleuA1OXW17f70PgA0jA4yYfOtK83bN9yfF9tseXaU9TTGzRWfcMYlet6_Wn4Ss4cO6kM5jpUyVNMOllWNbjYlyubfkgY6YjBqmI6TC4sFdPxCxgULXZr')"></div>
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-transparent"></div>
-<div class="relative z-10 p-8 md:p-16 w-full max-w-7xl mx-auto">
-<span class="bg-primary-container text-on-primary-container px-4 py-1 headline-font font-bold text-sm mb-4 inline-block">YAKLAŞAN ETKİNLİKLER</span>
-<h1 class="text-6xl md:text-8xl headline-font font-bold tracking-tighter leading-none uppercase mb-4">
+<div class="relative z-10 p-6 md:p-16 w-full max-w-7xl mx-auto">
+<span class="bg-primary-container text-on-primary-container px-3 md:px-4 py-1 headline-font font-bold text-xs md:text-sm mb-4 inline-block tracking-widest">YAKLAŞAN ETKİNLİKLER</span>
+<h1 class="text-5xl sm:text-6xl md:text-8xl headline-font font-bold tracking-tighter leading-none uppercase mb-4">
                     TRİBÜN <br/>RUHU BURADA.
                 </h1>
-<p class="max-w-xl text-on-surface-variant text-lg">
+<p class="max-w-xl text-on-surface-variant text-base md:text-lg">
                     Deplasman yolları, toplanma noktaları ve maç günü organizasyonları. Takvimini işaretle, yerini şimdiden ayırt.
                 </p>
 </div>
 </section>
-<!-- Bento Grid: Featured Events & Live Status -->
-<section class="p-8 md:p-16 max-w-7xl mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-<!-- Main Featured Event (Bento Large) -->
-<div class="md:col-span-8 bg-surface-container-low p-8 relative border-l-4 border-primary-container group">
-<div class="flex justify-between items-start mb-12">
+
+<section class="p-6 md:p-16 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
+<div class="lg:col-span-8 bg-surface-container-low p-6 md:p-8 relative border-l-4 border-primary-container group">
+<div class="flex flex-col sm:flex-row justify-between items-start mb-8 md:mb-12 gap-4 sm:gap-0">
 <div>
 <div class="flex items-center gap-2 text-primary mb-2">
 <span class="relative flex h-3 w-3">
 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
 <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
 </span>
-<span class="headline-font font-bold uppercase tracking-widest text-xs">Sıradaki Etkinlik</span>
+<span class="headline-font font-bold uppercase tracking-widest text-[10px] md:text-xs">Sıradaki Etkinlik</span>
 </div>
-<h2 class="text-4xl headline-font font-black uppercase tracking-tight">SAKARYA YÜRÜYÜŞÜ</h2>
+<h2 class="text-3xl md:text-4xl headline-font font-black uppercase tracking-tight">SAKARYA YÜRÜYÜŞÜ</h2>
 </div>
-<div class="text-right">
-<div class="text-3xl headline-font font-bold italic">18 MART</div>
-<div class="text-on-surface-variant text-sm uppercase">Pazar, 19:30</div>
+<div class="text-left sm:text-right">
+<div class="text-2xl md:text-3xl headline-font font-bold italic">18 MART</div>
+<div class="text-on-surface-variant text-xs md:text-sm uppercase">Pazar, 19:30</div>
 </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-8">
 <div class="bg-surface-container-high p-4">
 <span class="material-symbols-outlined text-primary mb-2">directions_bus</span>
-<div class="text-xs text-on-surface-variant uppercase mb-1">Başlangıç Noktası</div>
-<div class="font-bold">Çark Caddesi'nin başı.</div>
+<div class="text-[10px] md:text-xs text-on-surface-variant uppercase mb-1">Başlangıç Noktası</div>
+<div class="font-bold text-sm md:text-base">Çark Caddesi'nin başı.</div>
 </div>
 <div class="bg-surface-container-high p-4">
 <span class="material-symbols-outlined text-primary mb-2">schedule</span>
-<div class="text-xs text-on-surface-variant uppercase mb-1">Toplanma Saati</div>
-<div class="font-bold">14:30</div>
+<div class="text-[10px] md:text-xs text-on-surface-variant uppercase mb-1">Toplanma Saati</div>
+<div class="font-bold text-sm md:text-base">14:30</div>
 </div>
 <div class="bg-surface-container-high p-4">
 <span class="material-symbols-outlined text-primary mb-2">confirmation_number</span>
-<div class="text-xs text-on-surface-variant uppercase mb-1">Katılımcı sayısı</div>
-<div class="font-bold text-primary">2250</div>
+<div class="text-[10px] md:text-xs text-on-surface-variant uppercase mb-1">Katılımcı sayısı</div>
+<div class="font-bold text-primary text-sm md:text-base">2250</div>
 </div>
 </div>
-<div class="flex flex-wrap gap-4 items-center">
 </div>
-</div>
-<!-- Side Card: Meeting Point Map Preview (Bento Small) -->
-<div class="md:col-span-4 bg-surface-container-low flex flex-col">
-<div class="h-48 w-full grayscale contrast-125 opacity-70 overflow-hidden relative">
+<div class="lg:col-span-4 bg-surface-container-low flex flex-col">
+<div class="h-40 md:h-48 w-full grayscale contrast-125 opacity-70 overflow-hidden relative">
 <img class="w-full h-full object-cover" data-alt="high contrast aerial satellite view map of urban city streets in grayscale with a single red pin marker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV8MxcDrs87CxhCQ9UfWWe1hzJNmUccmd901yQ8jqEOg32f5Wt0MuL1UmD2CBmAh_e7INezRbTuoWuglRU1zsHdlFQRRBa-I-mWZ63YtfR2rKMEBQ_QlhMj_4ZvdjZ1EnTyj4c17GYjydQbcgUUJqO-_2-_rPpr_sL88Xny9NCoLKGp0YfDVdNXA-qClOm97-Vl8ZlrG2GrejcSisrNUPv_3RCh0I9jGe9J-rld5e-VtXZS6Hc9fyEt2fFtlaMwFO6bxyNnNhy2ukJ"/>
 <div class="absolute inset-0 bg-primary/10"></div>
 </div>
 <div class="p-6">
 <h3 class="headline-font font-bold uppercase mb-2">Toplanma Alanı</h3>
-<p class="text-sm text-on-surface-variant mb-4">Yürüyüş öncesi pankart hazırlıkları ve meşale şov için ana toplanma noktası.</p>
-<div class="flex items-center gap-2 text-xs font-bold text-primary">
+<p class="text-xs md:text-sm text-on-surface-variant mb-4">Yürüyüş öncesi pankart hazırlıkları ve meşale şov için ana toplanma noktası.</p>
+<div class="flex items-center gap-2 text-[10px] md:text-xs font-bold text-primary">
 <span class="material-symbols-outlined text-sm">location_on</span>
                             KUZEY TR-FORUM KAFE
                         </div>
@@ -178,115 +190,136 @@
 </div>
 </div>
 </section>
-<!-- Calendar Timeline Layout -->
-<section class="bg-surface-container-lowest p-8 md:p-16 border-t-4 border-primary-container">
+
+<section class="bg-surface-container-lowest p-6 md:p-16 border-t-4 border-primary-container">
 <div class="max-w-7xl mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-baseline mb-12 gap-4">
-<h2 class="text-5xl headline-font font-black uppercase tracking-tighter">ETKİNLİK TAKVİMİ</h2>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-baseline mb-8 md:mb-12 gap-4">
+<h2 class="text-4xl md:text-5xl headline-font font-black uppercase tracking-tighter">ETKİNLİK TAKVİMİ</h2>
+<div class="flex items-center gap-2 w-full md:w-auto justify-between md:justify-start">
 <div class="flex gap-2">
-<button class="p-2 border border-outline-variant hover:bg-primary transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
-<button class="p-2 border border-outline-variant hover:bg-primary transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
-<span class="headline-font font-bold ml-4 text-2xl uppercase">MART 2024</span>
+<button class="p-2 border border-outline-variant hover:bg-primary transition-colors"><span class="material-symbols-outlined text-sm md:text-base">chevron_left</span></button>
+<button class="p-2 border border-outline-variant hover:bg-primary transition-colors"><span class="material-symbols-outlined text-sm md:text-base">chevron_right</span></button>
+</div>
+<span class="headline-font font-bold md:ml-4 text-xl md:text-2xl uppercase">MART 2024</span>
 </div>
 </div>
+
 <div class="space-y-4">
-<!-- Calendar Row 1 -->
-<div class="grid grid-cols-1 md:grid-cols-12 bg-surface-container-low items-center hover:bg-surface-container-high transition-colors group">
-<div class="md:col-span-1 p-6 border-r border-outline-variant/20 flex flex-col items-center justify-center">
-<span class="text-3xl headline-font font-black">18</span>
-<span class="text-xs uppercase text-on-surface-variant">PAZ</span>
+<div class="grid grid-cols-1 md:grid-cols-12 bg-surface-container-low items-center hover:bg-surface-container-high transition-colors group border border-transparent hover:border-surface-variant/50">
+<div class="md:col-span-1 p-4 md:p-6 border-b md:border-b-0 md:border-r border-outline-variant/20 flex flex-row md:flex-col items-center justify-start md:justify-center gap-2 md:gap-0">
+<span class="text-2xl md:text-3xl headline-font font-black">18</span>
+<span class="text-[10px] md:text-xs uppercase text-on-surface-variant">PAZ</span>
 </div>
-<div class="md:col-span-2 p-6">
-<span class="bg-surface-variant px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Yürüyüş</span>
+<div class="md:col-span-2 p-4 md:p-6 pb-0 md:pb-6">
+<span class="bg-surface-variant px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant inline-block">Yürüyüş</span>
 </div>
-<div class="md:col-span-4 p-6">
-<h4 class="headline-font font-bold text-xl uppercase group-hover:text-primary transition-colors">Sakarya'da 6222 İçin Yürüyüş</h4>
+<div class="md:col-span-5 p-4 md:p-6 pt-2 md:pt-6">
+<h4 class="headline-font font-bold text-lg md:text-xl uppercase group-hover:text-primary transition-colors">Sakarya'da 6222 İçin Yürüyüş</h4>
 </div>
-<div class="md:col-span-2 p-6 flex items-center gap-2 text-on-surface-variant">
+<div class="md:col-span-4 p-4 md:p-6 pt-0 md:pt-6 flex flex-row items-center justify-between md:justify-end gap-4 text-on-surface-variant">
+<div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-sm">schedule</span>
 <span class="text-sm font-medium">19:30</span>
 </div>
-<div class="md:col-span-3 p-6 text-right">
 </div>
 </div>
-<!-- Calendar Row 2 -->
-<div class="grid grid-cols-1 md:grid-cols-12 bg-surface-container-low items-center hover:bg-surface-container-high transition-colors group">
-<div class="md:col-span-1 p-6 border-r border-outline-variant/20 flex flex-col items-center justify-center">
-<span class="text-3xl headline-font font-black">22</span>
-<span class="text-xs uppercase text-on-surface-variant">PER</span>
+
+<div class="grid grid-cols-1 md:grid-cols-12 bg-surface-container-low items-center hover:bg-surface-container-high transition-colors group border border-transparent hover:border-surface-variant/50">
+<div class="md:col-span-1 p-4 md:p-6 border-b md:border-b-0 md:border-r border-outline-variant/20 flex flex-row md:flex-col items-center justify-start md:justify-center gap-2 md:gap-0">
+<span class="text-2xl md:text-3xl headline-font font-black">22</span>
+<span class="text-[10px] md:text-xs uppercase text-on-surface-variant">PER</span>
 </div>
-<div class="md:col-span-2 p-6">
-<span class="bg-primary-container/20 text-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest">Yürüyüş</span>
+<div class="md:col-span-2 p-4 md:p-6 pb-0 md:pb-6">
+<span class="bg-primary-container/20 text-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest inline-block">Yürüyüş</span>
 </div>
-<div class="md:col-span-4 p-6">
-<h4 class="headline-font font-bold text-xl uppercase group-hover:text-primary transition-colors">Ankara'da 6222 İçin Yürüyüş</h4>
+<div class="md:col-span-5 p-4 md:p-6 pt-2 md:pt-6">
+<h4 class="headline-font font-bold text-lg md:text-xl uppercase group-hover:text-primary transition-colors">Ankara'da 6222 İçin Yürüyüş</h4>
 </div>
-<div class="md:col-span-2 p-6 flex items-center gap-2 text-on-surface-variant">
+<div class="md:col-span-4 p-4 md:p-6 pt-0 md:pt-6 flex flex-row items-center justify-between md:justify-end gap-4 text-on-surface-variant">
+<div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-sm">schedule</span>
 <span class="text-sm font-medium">19:30</span>
 </div>
-<div class="md:col-span-3 p-6 text-right">
 </div>
 </div>
-<!-- Calendar Row 3 -->
-<div class="grid grid-cols-1 md:grid-cols-12 bg-surface-container-low items-center hover:bg-surface-container-high transition-colors group">
-<div class="md:col-span-1 p-6 border-r border-outline-variant/20 flex flex-col items-center justify-center">
-<span class="text-3xl headline-font font-black">25</span>
-<span class="text-xs uppercase text-on-surface-variant">CTS</span>
+
+<div class="grid grid-cols-1 md:grid-cols-12 bg-surface-container-low items-center hover:bg-surface-container-high transition-colors group border border-transparent hover:border-surface-variant/50">
+<div class="md:col-span-1 p-4 md:p-6 border-b md:border-b-0 md:border-r border-outline-variant/20 flex flex-row md:flex-col items-center justify-start md:justify-center gap-2 md:gap-0">
+<span class="text-2xl md:text-3xl headline-font font-black">25</span>
+<span class="text-[10px] md:text-xs uppercase text-on-surface-variant">CTS</span>
 </div>
-<div class="md:col-span-2 p-6">
-<span class="bg-surface-variant px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Toplantı</span>
+<div class="md:col-span-2 p-4 md:p-6 pb-0 md:pb-6">
+<span class="bg-surface-variant px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant inline-block">Toplantı</span>
 </div>
-<div class="md:col-span-4 p-6">
-<h4 class="headline-font font-bold text-xl uppercase group-hover:text-primary transition-colors">İzmir'de 6222 İçin Yürüyüş</h4>
+<div class="md:col-span-5 p-4 md:p-6 pt-2 md:pt-6">
+<h4 class="headline-font font-bold text-lg md:text-xl uppercase group-hover:text-primary transition-colors">İzmir'de 6222 İçin Yürüyüş</h4>
 </div>
-<div class="md:col-span-2 p-6 flex items-center gap-2 text-on-surface-variant">
+<div class="md:col-span-4 p-4 md:p-6 pt-0 md:pt-6 flex flex-row items-center justify-between md:justify-end gap-4 text-on-surface-variant">
+<div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-sm">schedule</span>
 <span class="text-sm font-medium">13:00</span>
 </div>
-<div class="md:col-span-3 p-6 text-right">
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- Rules & Info Section -->
-<section class="p-8 md:p-16 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
-<div class="space-y-6">
-<h3 class="text-3xl headline-font font-black uppercase tracking-tighter italic">ORGANİZASYON KURALLARI</h3>
+
+<section class="p-6 md:p-16 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
+<div class="space-y-6 flex flex-col justify-center">
+<h3 class="text-2xl md:text-3xl headline-font font-black uppercase tracking-tighter italic">ORGANİZASYON KURALLARI</h3>
 <div class="space-y-4">
 <div class="flex gap-4">
 <span class="text-primary headline-font font-black text-2xl">01.</span>
-<p class="text-on-surface-variant">Tüm yürüyüş organizasyonlarında grup liderlerini dinlemek zorunludur.</p>
+<p class="text-on-surface-variant text-sm md:text-base">Tüm yürüyüş organizasyonlarında grup liderlerini dinlemek zorunludur.</p>
 </div>
 <div class="flex gap-4">
 <span class="text-primary headline-font font-black text-2xl">02.</span>
-<p class="text-on-surface-variant">30 dakika önce toplanma noktasında olunmalıdır.</p>
+<p class="text-on-surface-variant text-sm md:text-base">30 dakika önce toplanma noktasında olunmalıdır.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="bg-surface-container-high p-8 flex flex-col justify-center items-center text-center border-t-8 border-primary-container">
-<span class="material-symbols-outlined text-6xl text-primary mb-4">campaign</span>
-<h3 class="text-2xl headline-font font-black uppercase mb-2">WHATSAPP DUYURU KANALI</h3>
-<p class="text-on-surface-variant mb-6">Anlık haberler, toplanma güncellemeleri ve acil duyurular için kanalımıza katılın.</p>
-<button class="bg-on-surface text-surface px-8 py-3 font-bold headline-font uppercase hover:bg-primary hover:text-white transition-all">KANALA KATIL</button>
+
+<div class="bg-surface-container-high p-6 md:p-8 flex flex-col justify-center items-center text-center border-t-8 border-primary-container">
+<span class="material-symbols-outlined text-5xl md:text-6xl text-primary mb-4">campaign</span>
+<h3 class="text-xl md:text-2xl headline-font font-black uppercase mb-2">WHATSAPP DUYURU KANALI</h3>
+<p class="text-on-surface-variant text-sm md:text-base mb-6">Anlık haberler, toplanma güncellemeleri ve acil duyurular için kanalımıza katılın.</p>
+<button class="w-full sm:w-auto bg-on-surface text-surface px-8 py-3 font-bold headline-font uppercase hover:bg-primary hover:text-white transition-all">KANALA KATIL</button>
 </div>
 </section>
 </main>
-<!-- Footer -->
-<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#0E0E0E] border-t-4 border-[#D72323]">
-<div class="text-xl font-black text-[#D72323] uppercase headline-font">
+
+<footer class="w-full py-10 md:py-12 px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 bg-[#0E0E0E] border-t-4 border-[#D72323]">
+<div class="text-xl font-black text-[#D72323] uppercase headline-font text-center md:text-left">
             TR-FORUM
         </div>
-<div class="text-[#E6BDB8] font-['Inter'] text-sm tracking-tight text-center md:text-left">
+<div class="text-[#E6BDB8] font-['Inter'] text-xs md:text-sm tracking-tight text-center md:text-left order-last md:order-none opacity-80 mt-2 md:mt-0">
             © 2024 TR-FORUM. Asla Pes Etme!
         </div>
-<div class="flex gap-6 font-['Inter'] text-sm tracking-tight">
+<div class="flex flex-col md:flex-row flex-wrap justify-center gap-4 md:gap-6 font-['Inter'] text-xs md:text-sm tracking-tight text-center">
 <a class="text-[#E6BDB8] hover:text-[#D72323] transition-colors" href="#">Gizlilik Politikası</a>
 <a class="text-[#E6BDB8] hover:text-[#D72323] transition-colors" href="#">TR-FORUM'un Hizmet Şartları</a>
-<a class="text-[#E6BDB8] hover:text-[#D72323] transition-colors" href="#">Bizimle İletişime Geç</a>
+<a class="text-[#E6BDB8] hover:text-[#D72323] transition-colors" href="#">İletişim</a>
 <a class="text-[#E6BDB8] hover:text-[#D72323] transition-colors" href="#">Arşiv</a>
 </div>
 </footer>
+
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = mobileMenuBtn.querySelector('span');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        // Gizli sınıfını aç/kapat, esnek (flex) sınıfını ekle/çıkar
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+        
+        // İkonu değiştir (menü kapalıysa hamburger, açıksa çarpı)
+        if (mobileMenu.classList.contains('hidden')) {
+            menuIcon.textContent = 'menu';
+        } else {
+            menuIcon.textContent = 'close';
+        }
+    });
+</script>
 </body></html>
