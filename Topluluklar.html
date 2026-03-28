@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="tr"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -84,54 +82,73 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface selection:bg-primary-container selection:text-white">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full flex justify-between items-center px-8 h-20 bg-[#131313] z-50">
-  <button class="md:hidden flex items-center justify-center text-on-surface hover:text-primary-container transition-colors">
-  <span class="material-symbols-outlined text-3xl">menu</span>
-</button>
-<div class="text-3xl font-black text-[#D72323] tracking-tighter uppercase font-['Space_Grotesk']">TR-FORUM</div>
-<div class="hidden md:flex items-center gap-8">
-<a class="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors" href="index.html">Anasayfa</a>
-<a class="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-[#D72323] border-b-4 border-[#D72323] pb-1" href="Topluluklar.html">Taraftar Grupları</a>
-<a class="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors" href="Etkinlikler.html">Etkinlikler</a>
-<a class="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors" href="medya.html">Medya</a>
-</div>
-<div class="flex items-center gap-6">
-<div class="hidden md:flex items-center bg-surface-container-lowest px-4 py-2">
-<span class="material-symbols-outlined text-on-surface-variant mr-2" data-icon="search">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-sm font-bold uppercase tracking-widest placeholder:text-outline-variant" placeholder="ARA..." type="text"/>
-</div>
-<a class="bg-[#D72323] text-white px-6 py-2 text-sm font-black transition-transform active:scale-95" href="üyelik.html">ÜYE OL!</a>
-<div class="flex gap-4">
-<span class="material-symbols-outlined text-[#E6BDB8] cursor-pointer hover:text-[#D72323]" data-icon="notifications">notifications</span>
-<span class="material-symbols-outlined text-[#E6BDB8] cursor-pointer hover:text-[#D72323]" data-icon="person">person</span>
-</div>
-</div>
+
+<nav class="fixed top-0 w-full flex justify-between items-center px-4 md:px-8 h-20 bg-[#131313] z-50 border-b border-surface-variant/30">
+  <div class="flex items-center gap-3">
+    <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center text-[#E6BDB8] hover:text-[#D72323] transition-colors focus:outline-none">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+    <div class="text-xl md:text-3xl font-black text-[#D72323] tracking-tighter uppercase font-['Space_Grotesk']">TR-FORUM</div>
+  </div>
+
+  <div class="hidden md:flex items-center gap-8">
+    <a class="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors" href="index.html">Anasayfa</a>
+    <a class="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-[#D72323] border-b-4 border-[#D72323] pb-1" href="Topluluklar.html">Taraftar Grupları</a>
+    <a class="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors" href="Etkinlikler.html">Etkinlikler</a>
+    <a class="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors" href="medya.html">Medya</a>
+  </div>
+
+  <div class="flex items-center gap-4 md:gap-6">
+    <div class="hidden md:flex items-center bg-surface-container-lowest px-4 py-2">
+      <span class="material-symbols-outlined text-on-surface-variant mr-2" data-icon="search">search</span>
+      <input class="bg-transparent border-none focus:ring-0 text-xs md:text-sm font-bold uppercase tracking-widest placeholder:text-outline-variant w-24 md:w-auto" placeholder="ARA..." type="text"/>
+    </div>
+    <a class="bg-[#D72323] text-white px-4 md:px-6 py-2 text-xs md:text-sm font-black transition-transform active:scale-95 whitespace-nowrap" href="üyelik.html">ÜYE OL!</a>
+    <div class="hidden sm:flex gap-4">
+      <span class="material-symbols-outlined text-[#E6BDB8] cursor-pointer hover:text-[#D72323]" data-icon="notifications">notifications</span>
+      <span class="material-symbols-outlined text-[#E6BDB8] cursor-pointer hover:text-[#D72323]" data-icon="person">person</span>
+    </div>
+  </div>
 </nav>
+
+<div id="mobile-menu" class="hidden fixed top-20 left-0 w-full bg-[#131313] border-b-4 border-[#D72323] z-40 flex-col items-center py-6 gap-6 shadow-2xl md:hidden transition-all">
+    <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors w-3/4 text-center pb-1 border-b border-surface-variant/30" href="index.html">Anasayfa</a>
+    <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#D72323] border-b-2 border-[#D72323] pb-1 w-3/4 text-center" href="Topluluklar.html">Taraftar Grupları</a>
+    <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors w-3/4 text-center pb-1 border-b border-surface-variant/30" href="Etkinlikler.html">Etkinlikler</a>
+    <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors w-3/4 text-center pb-1" href="medya.html">Medya</a>
+    <div class="flex items-center bg-surface-container-lowest px-4 py-3 mt-2 w-3/4 justify-center">
+        <span class="material-symbols-outlined text-on-surface-variant text-base mr-2">search</span>
+        <input class="bg-transparent border-none focus:ring-0 text-sm font-bold tracking-widest text-on-surface uppercase w-full" placeholder="ARA..." type="text"/>
+    </div>
+    <div class="flex gap-8 mt-2">
+        <span class="material-symbols-outlined text-[#E6BDB8] cursor-pointer hover:text-[#D72323]" data-icon="notifications">notifications</span>
+        <span class="material-symbols-outlined text-[#E6BDB8] cursor-pointer hover:text-[#D72323]" data-icon="person">person</span>
+    </div>
+</div>
+
 <main class="pt-20">
-<!-- Hero Section -->
-<section class="relative h-[614px] flex items-end overflow-hidden">
+<section class="relative min-h-[60svh] md:h-[614px] flex items-end overflow-hidden">
 <div class="absolute inset-0 bg-cover bg-center" data-alt="high contrast black and white photo of a crowded football stadium terrace with red flares lighting up the night sky and thick smoke" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADkYCK5xPq-hECbE6YpL0OmqR-Zhy38-ddQpZ_2CCdUnHsX2feID47CIXFu_R1LtYOJ7JmQr2VnoW5MJL8AuD4YQRMtn-9hII-YJfKK6Rw1x-3OBnwxzbi1V547V0JWaS4bZ3dsX5BdraH2A_PIXn6qsx9QV-mj7GVhTmx2dh2pCNaRYaiY9sASZdQB6wMk5rTlmPxaQR42kWww_T1ircN53ujJJ-KRwbKV9ZOSP4q_CihzBOgELFs1P-bwIc0wdv5tARaTHFg1yHE')"></div>
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-transparent"></div>
-<div class="relative z-10 p-8 md:p-16 w-full">
-<h1 class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-4">Taraftar Grupları</h1>
-<p class="text-on-surface-variant max-w-2xl text-xl font-medium tracking-tight">Sadece bir taraftar grubu değil, bir yaşam biçimi. Tribünün sesi, sokağın ruhu burada birleşiyor.</p>
+<div class="relative z-10 p-6 md:p-16 w-full">
+<h1 class="text-5xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-4">Taraftar Grupları</h1>
+<p class="text-on-surface-variant max-w-2xl text-lg md:text-xl font-medium tracking-tight">Sadece bir taraftar grubu değil, bir yaşam biçimi. Tribünün sesi, sokağın ruhu burada birleşiyor.</p>
 </div>
 </section>
-<!-- Membership Benefits - Asymmetric Layout -->
-<section class="p-8 md:p-16 grid grid-cols-1 md:grid-cols-12 gap-8 bg-surface-container-low">
+
+<section class="p-6 md:p-16 grid grid-cols-1 md:grid-cols-12 gap-8 bg-surface-container-low">
 <div class="md:col-span-5">
-<h2 class="text-5xl font-black uppercase tracking-tighter mb-8 leading-tight">ÜYELİK <span class="text-primary-container">AYRICALIKLARI</span></h2>
-<p class="text-on-surface-variant mb-12 text-lg">TR-FORUM üyesi olmak, aileye katılmak demektir. İşte sadakatinizin karşılığı:</p>
-<div class="space-y-6">
-<div class="flex items-start gap-4 p-6 bg-surface-container-high border-l-4 border-primary-container">
+<h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6 md:mb-8 leading-tight">ÜYELİK <span class="text-primary-container">AYRICALIKLARI</span></h2>
+<p class="text-on-surface-variant mb-8 md:mb-12 text-base md:text-lg">TR-FORUM üyesi olmak, aileye katılmak demektir. İşte sadakatinizin karşılığı:</p>
+<div class="space-y-4 md:space-y-6">
+<div class="flex flex-col sm:flex-row items-start gap-4 p-6 bg-surface-container-high border-l-4 border-primary-container">
 <span class="material-symbols-outlined text-primary-container text-4xl" data-icon="confirmation_number">confirmation_number</span>
 <div>
 <h3 class="font-bold uppercase tracking-tighter text-xl">Reklam Jesti</h3>
 <p class="text-on-surface-variant text-sm mt-2">Forumda dilediğiniz kadar reklamsız gezinme imkanı.</p>
 </div>
 </div>
-<div class="flex items-start gap-4 p-6 bg-surface-container-high border-l-4 border-primary-container">
+<div class="flex flex-col sm:flex-row items-start gap-4 p-6 bg-surface-container-high border-l-4 border-primary-container">
 <span class="material-symbols-outlined text-primary-container text-4xl" data-icon="shopping_bag">shopping_bag</span>
 <div>
 <h3 class="font-bold uppercase tracking-tighter text-xl">Özel Ürünler</h3>
@@ -141,168 +158,159 @@
 </div>
 </div>
 <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
-<div class="bg-surface-container-high p-8 flex flex-col justify-between">
-<span class="text-6xl font-black text-primary-container/20">03</span>
+<div class="bg-surface-container-high p-6 md:p-8 flex flex-col justify-between">
+<span class="text-5xl md:text-6xl font-black text-primary-container/20 mb-4 md:mb-0">03</span>
 <div>
-<h3 class="text-2xl font-black uppercase tracking-tighter mb-2">Deplasman Otobüsleri</h3>
+<h3 class="text-xl md:text-2xl font-black uppercase tracking-tighter mb-2">Deplasman Otobüsleri</h3>
 <p class="text-on-surface-variant text-sm">Tüm deplasman organizasyonlarında öncelikli koltuk rezervasyonu ve konaklama indirimleri.</p>
 </div>
 </div>
-<div class="bg-primary-container p-8 flex flex-col justify-between text-on-primary-container">
-<span class="material-symbols-outlined text-6xl" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<div class="bg-primary-container p-6 md:p-8 flex flex-col justify-between text-on-primary-container">
+<span class="material-symbols-outlined text-5xl md:text-6xl mb-4 md:mb-0" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
 <div>
-<h3 class="text-2xl font-black uppercase tracking-tighter mb-2">Tribün Liderliği</h3>
+<h3 class="text-xl md:text-2xl font-black uppercase tracking-tighter mb-2">Tribün Liderliği</h3>
 <p class="text-sm opacity-90">Koreografi hazırlıklarına katılım ve tribün yönetiminde söz sahibi olma yetkisi.</p>
 </div>
 </div>
-<div class="sm:col-span-2 relative min-h-[300px] overflow-hidden">
+<div class="sm:col-span-2 relative min-h-[250px] md:min-h-[300px] overflow-hidden hidden sm:block">
 <div class="absolute inset-0 bg-cover bg-center" data-alt="group of football fans in red scarves holding up a massive banner in a dark stadium with dramatic industrial lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB35WB402UiB_q5nN2zUKtjiyFqna7rAzHgVC_UikngHXGw5mz3ck-0RSITNSiemvlAwa3cOvfquLQH_uecONSYzMK4ARzjK7_e66JnNz0E46-eeglB1neWwp1hXx6UxtwYIz43ku474VMy4VP3lA58NVhrM5QaqiVQeHWf02mqMwJo2g9WXntUtgF48p8JZRP4CQIGEZf94c858bBlVGDMCKT29F5angsFsGTDbNvCgltxl_n7edUTQq8tsGZdbjnCluxjmR3FqrZ1')"></div>
 <div class="absolute inset-0 bg-black/40"></div>
-<div class="absolute bottom-6 left-6">
-</div>
 </div>
 </div>
 </section>
-<!-- Forum/Discussion Preview - Bento Grid -->
-<section class="p-8 md:p-16">
-<div class="flex justify-between items-end mb-12">
+
+<section class="p-6 md:p-16">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12 gap-4">
 <div>
-<h2 class="text-5xl font-black uppercase tracking-tighter">TR-FORUM <span class="text-primary-container">TARTIŞMALARI</span></h2>
-<p class="text-on-surface-variant mt-2 uppercase tracking-widest text-sm">Gündem, Taktik ve Tribün Kültürü</p>
+<h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter">TR-FORUM <span class="text-primary-container">TARTIŞMALARI</span></h2>
+<p class="text-on-surface-variant mt-2 uppercase tracking-widest text-xs md:text-sm">Gündem, Taktik ve Tribün Kültürü</p>
 </div>
-<button class="hidden md:block border-2 border-outline-variant px-8 py-3 font-bold uppercase tracking-tighter hover:bg-primary-container hover:border-primary-container transition-all">Tüm Forumu Gör</button>
+<button class="w-full md:w-auto border-2 border-outline-variant px-8 py-3 font-bold uppercase tracking-tighter hover:bg-primary-container hover:border-primary-container transition-all">Tüm Forumu Gör</button>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Thread 1 -->
-<div class="bg-surface-container-high p-8 flex flex-col justify-between group cursor-pointer hover:bg-surface-variant transition-colors">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-surface-container-high p-6 md:p-8 flex flex-col justify-between group cursor-pointer hover:bg-surface-variant transition-colors">
 <div>
 <div class="flex justify-between items-start mb-6">
-<span class="text-xs font-bold uppercase tracking-widest bg-primary-container px-2 py-1">Gündem</span>
-<span class="text-xs text-on-surface-variant">14 Dakika Önce</span>
+<span class="text-[10px] md:text-xs font-bold uppercase tracking-widest bg-primary-container px-2 py-1">Gündem</span>
+<span class="text-[10px] md:text-xs text-on-surface-variant">14 Dakika Önce</span>
 </div>
-<h3 class="text-2xl font-bold tracking-tighter leading-tight group-hover:text-primary-container transition-colors">Milli maç için pankart önerileri.</h3>
+<h3 class="text-xl md:text-2xl font-bold tracking-tighter leading-tight group-hover:text-primary-container transition-colors">Milli maç için pankart önerileri.</h3>
 <p class="text-on-surface-variant mt-4 text-sm line-clamp-2">Arkadaşlar, kuzey tribününde açacağımız 40 metrelik pankart için fikirlerinizi bekliyoruz. Görsel ağırlıklı mı olsun yoksa sert bir mesaj mı?</p>
 </div>
-<div class="flex items-center gap-4 mt-8 pt-6 border-t border-outline-variant/30">
-<div class="w-10 h-10 bg-surface-container-lowest flex items-center justify-center font-bold">A</div>
-<span class="text-sm font-bold">Amigo_Emre</span>
+<div class="flex items-center gap-3 md:gap-4 mt-8 pt-6 border-t border-outline-variant/30">
+<div class="w-8 h-8 md:w-10 md:h-10 bg-surface-container-lowest flex items-center justify-center font-bold text-sm">A</div>
+<span class="text-xs md:text-sm font-bold">Amigo_Emre</span>
 <div class="ml-auto flex items-center gap-2">
 <span class="material-symbols-outlined text-sm" data-icon="forum">forum</span>
-<span class="text-sm font-bold">124</span>
+<span class="text-xs md:text-sm font-bold">124</span>
 </div>
 </div>
 </div>
-<!-- Thread 2 -->
-<div class="bg-surface-container-high p-8 flex flex-col justify-between group cursor-pointer hover:bg-surface-variant transition-colors">
+<div class="bg-surface-container-high p-6 md:p-8 flex flex-col justify-between group cursor-pointer hover:bg-surface-variant transition-colors">
 <div>
 <div class="flex justify-between items-start mb-6">
-<span class="text-xs font-bold uppercase tracking-widest bg-secondary-container px-2 py-1">Taktik</span>
-<span class="text-xs text-on-surface-variant">2 Saat Önce</span>
+<span class="text-[10px] md:text-xs font-bold uppercase tracking-widest bg-secondary-container px-2 py-1">Taktik</span>
+<span class="text-[10px] md:text-xs text-on-surface-variant">2 Saat Önce</span>
 </div>
-<h3 class="text-2xl font-bold tracking-tighter leading-tight group-hover:text-primary-container transition-colors">Orta Saha Kurgusundaki Eksiklerimiz ve Pres Gücü</h3>
+<h3 class="text-xl md:text-2xl font-bold tracking-tighter leading-tight group-hover:text-primary-container transition-colors">Orta Saha Kurgusundaki Eksiklerimiz ve Pres Gücü</h3>
 <p class="text-on-surface-variant mt-4 text-sm line-clamp-2">Son maçta gördük ki geçiş oyununda çok yavaş kalıyoruz. 4-3-3 sisteminde kanatların içeri kat etmesi lazım ama...</p>
 </div>
-<div class="flex items-center gap-4 mt-8 pt-6 border-t border-outline-variant/30">
-<div class="w-10 h-10 bg-surface-container-lowest flex items-center justify-center font-bold">K</div>
-<span class="text-sm font-bold">Kanalize_84</span>
+<div class="flex items-center gap-3 md:gap-4 mt-8 pt-6 border-t border-outline-variant/30">
+<div class="w-8 h-8 md:w-10 md:h-10 bg-surface-container-lowest flex items-center justify-center font-bold text-sm">K</div>
+<span class="text-xs md:text-sm font-bold">Kanalize_84</span>
 <div class="ml-auto flex items-center gap-2">
 <span class="material-symbols-outlined text-sm" data-icon="forum">forum</span>
-<span class="text-sm font-bold">56</span>
+<span class="text-xs md:text-sm font-bold">56</span>
 </div>
 </div>
 </div>
-<!-- Thread 3 (Featured) -->
-<div class="bg-surface-container-lowest border-2 border-primary-container p-8 flex flex-col justify-between group cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="bg-surface-container-lowest border-2 border-primary-container p-6 md:p-8 flex flex-col justify-between group cursor-pointer hover:bg-surface-container-low transition-colors md:col-span-2 lg:col-span-1">
 <div>
 <div class="flex justify-between items-start mb-6">
-<span class="text-xs font-bold uppercase tracking-widest bg-white text-black px-2 py-1">Sabitlenmiş</span>
-<span class="text-xs text-on-surface-variant">Dün</span>
+<span class="text-[10px] md:text-xs font-bold uppercase tracking-widest bg-white text-black px-2 py-1">Sabitlenmiş</span>
+<span class="text-[10px] md:text-xs text-on-surface-variant">Dün</span>
 </div>
-<h3 class="text-2xl font-bold tracking-tighter leading-tight text-white group-hover:text-primary-container transition-colors">Yıllık Olağan Ultras Toplantısı: Tarih ve Mekan</h3>
+<h3 class="text-xl md:text-2xl font-bold tracking-tighter leading-tight text-white group-hover:text-primary-container transition-colors">Yıllık Olağan Ultras Toplantısı: Tarih ve Mekan</h3>
 <p class="text-on-surface-variant mt-4 text-sm line-clamp-2">Grup içi hiyerarşi, bütçe yönetimi ve gelecek sezonun planlaması için tüm alt grupların temsilcileri davetlidir.</p>
 </div>
-<div class="flex items-center gap-4 mt-8 pt-6 border-t border-outline-variant/30">
-<div class="w-10 h-10 bg-primary-container flex items-center justify-center font-bold">MOD</div>
-<span class="text-sm font-bold">Yönetim</span>
+<div class="flex items-center gap-3 md:gap-4 mt-8 pt-6 border-t border-outline-variant/30">
+<div class="w-8 h-8 md:w-10 md:h-10 bg-primary-container flex items-center justify-center font-bold text-xs md:text-sm">MOD</div>
+<span class="text-xs md:text-sm font-bold">Yönetim</span>
 <div class="ml-auto flex items-center gap-2">
 <span class="material-symbols-outlined text-sm" data-icon="forum">forum</span>
-<span class="text-sm font-bold">342</span>
+<span class="text-xs md:text-sm font-bold">342</span>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- Leaders Section -->
-<section class="p-8 md:p-16 bg-surface-container-lowest">
-<h2 class="text-5xl font-black uppercase tracking-tighter mb-12 text-center">TRİBÜNÜN <span class="text-primary-container">MİMARLARI</span></h2>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-<!-- Leader 1 -->
-<div class="group">
-<div class="aspect-[3/4] overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-500">
+
+<section class="p-6 md:p-16 bg-surface-container-lowest">
+<h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8 md:mb-12 text-center md:text-left">TRİBÜNÜN <span class="text-primary-container">MİMARLARI</span></h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="group flex flex-col items-center md:items-start text-center md:text-left">
+<div class="aspect-[3/4] w-full max-w-[280px] md:max-w-none overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-500">
 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="portrait of a determined football supporter leader with tattoos wearing a red hoodie, standing in front of a concrete stadium wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnIYRmAIYUAXLeewvSfU7387J1OE8ppJV2_E07cOs2M_3US_R6xh_XM4zPzWReBKbkqwn7atiMGMaKrnm8CY0a3Z6qToE0AujEK4sFlYm_8InjJduVavncGFtIWyrUZ-_3QzMgC31b7PtINHqnz9-k_UrrxlYF34Z7u4MVk2oWv7lXrALcrDmEtgoszJGdUkopfw7zH6NfPAE3Jcr1vLR_ce6dY8Xri3QH-ureiu7eNGBee8ujvvLnkq-aBpYqiVeXv0_SlQnEafOE"/>
 </div>
-<h3 class="text-2xl font-black uppercase tracking-tighter">AMİGO EMRE</h3>
-<p class="text-primary-container font-bold text-sm tracking-widest mt-1">GENEL KOORDİNATÖR</p>
-<p class="text-on-surface-variant text-sm mt-4">20 yıldır tribünde, grubun sesi ve düzeninden sorumlu baş mimar.</p>
+<h3 class="text-xl md:text-2xl font-black uppercase tracking-tighter">AMİGO EMRE</h3>
+<p class="text-primary-container font-bold text-xs md:text-sm tracking-widest mt-1">GENEL KOORDİNATÖR</p>
+<p class="text-on-surface-variant text-sm mt-3 md:mt-4 max-w-[280px] md:max-w-none">20 yıldır tribünde, grubun sesi ve düzeninden sorumlu baş mimar.</p>
 </div>
-<!-- Leader 2 -->
-<div class="group">
-<div class="aspect-[3/4] overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="group flex flex-col items-center md:items-start text-center md:text-left">
+<div class="aspect-[3/4] w-full max-w-[280px] md:max-w-none overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-500">
 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="modern urban youth leader with sharp features and a buzzcut, wearing a black bomber jacket with an ultra insignia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEjgOI0J2_Ur1GXFVCrSs5bpl-mOygJUkw0OPyjhkUTHsgeU-IJQhWZQfthBpraUoznr2Jo-cMq-888BAGLk_6mxkZV9OibolopO4PYs2FwPALhgZx3VPLoWYh2YK8TpSPANBTUKZ1IPfMsLgrHdjpmwYmRV8NcRgd44m6lgAmbr_-8b4Su3Zr1EZqZoqVUEHB7pg0Mwk061NPqKvh8YWxBPeWJWOpmSgeSFWTEkYfuppFAXEsQL2_M4BsuSI1Pn5r-Pf1Jr0VDWZf"/>
 </div>
-<h3 class="text-2xl font-black uppercase tracking-tighter">YAVUZ "KAPTAN"</h3>
-<p class="text-primary-container font-bold text-sm tracking-widest mt-1">KOREOGRAFİ ŞEFİ</p>
-<p class="text-on-surface-variant text-sm mt-4">Görsel şovların beyni. Her büyük maçta stadı bir sanat eserine dönüştüren isim.</p>
+<h3 class="text-xl md:text-2xl font-black uppercase tracking-tighter">YAVUZ "KAPTAN"</h3>
+<p class="text-primary-container font-bold text-xs md:text-sm tracking-widest mt-1">KOREOGRAFİ ŞEFİ</p>
+<p class="text-on-surface-variant text-sm mt-3 md:mt-4 max-w-[280px] md:max-w-none">Görsel şovların beyni. Her büyük maçta stadı bir sanat eserine dönüştüren isim.</p>
 </div>
-<!-- Leader 3 -->
-<div class="group">
-<div class="aspect-[3/4] overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="group flex flex-col items-center md:items-start text-center md:text-left">
+<div class="aspect-[3/4] w-full max-w-[280px] md:max-w-none overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-500">
 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="middle aged man with a rugged beard and intense eyes wearing a vintage football scarf around his neck" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyuWH0ZjNb276JcaHWHRuRn5-GhLrvM5ebn76hDrbMsol5Qqf6s2Kl4EhTl1FSu52LYl7kFVTxPc6628z9H0Jn78ZMgdNoJMTmN9ZMQLU14F1vi8CrfGIq0jVJGob9-Pl8mp49PqrLO4-KTCiTDLT0i0fHb1FFzcakxS2u1EM2K8HeeTdaHcgaI_a3S1YgtdC0uD6FDkN8FifDfwc_797JKcm_v31MVQssExwMiH_rfyFcizbmc752fmdQcTJQizjVCFejFMM1qTUQ"/>
 </div>
-<h3 class="text-2xl font-black uppercase tracking-tighter">YAVUZ BABA</h3>
-<p class="text-primary-container font-bold text-sm tracking-widest mt-1">DİSİPLİN KURULU</p>
-<p class="text-on-surface-variant text-sm mt-4">Grup içindeki adaleti ve geleneklerin korunmasını sağlayan efsanevi isim.</p>
+<h3 class="text-xl md:text-2xl font-black uppercase tracking-tighter">YAVUZ BABA</h3>
+<p class="text-primary-container font-bold text-xs md:text-sm tracking-widest mt-1">DİSİPLİN KURULU</p>
+<p class="text-on-surface-variant text-sm mt-3 md:mt-4 max-w-[280px] md:max-w-none">Grup içindeki adaleti ve geleneklerin korunmasını sağlayan efsanevi isim.</p>
 </div>
-<!-- Leader 4 -->
-<div class="group">
-<div class="aspect-[3/4] overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="group flex flex-col items-center md:items-start text-center md:text-left">
+<div class="aspect-[3/4] w-full max-w-[280px] md:max-w-none overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-500">
 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="tough looking young woman with short dyed red hair and a denim jacket with patches, leading a chant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChFJy48RW3NDSfMPgEd5JxgcW6DlUEkLSdC4yVcfDezG0Ul64gYQUBfe8xtP3bPwnmK36ebVqOHcuOiIRQyc1qhiPBMZIKPzm53dhrIgD3P588kyvclPqXHSJd4-mkeceFU98blUnqRVwU83eM4TWOoxUDCqp6uIkS2Z0ex0VxLdvQroh0mtJbNryxGR34zV3hndDR_l9eqKSsHFk7jV1zpI6K8WUAl8pG1blOYz-9OYIDj8-U5ZFEiPW4UA3Jal5BJKNc0tcDimPI"/>
 </div>
-<h3 class="text-2xl font-black uppercase tracking-tighter">DENİZ "ASENA"</h3>
-<p class="text-primary-container font-bold text-sm tracking-widest mt-1">KADIN KOLLARI BAŞKANI</p>
-<p class="text-on-surface-variant text-sm mt-4">Tribündeki kadın gücünün temsilcisi ve deplasman organizasyon sorumlusu.</p>
+<h3 class="text-xl md:text-2xl font-black uppercase tracking-tighter">DENİZ "ASENA"</h3>
+<p class="text-primary-container font-bold text-xs md:text-sm tracking-widest mt-1">KADIN KOLLARI BAŞKANI</p>
+<p class="text-on-surface-variant text-sm mt-3 md:mt-4 max-w-[280px] md:max-w-none">Tribündeki kadın gücünün temsilcisi ve deplasman organizasyon sorumlusu.</p>
 </div>
 </div>
 </section>
-<!-- Join Us Form Section -->
-<section class="p-8 md:p-16 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+<section class="p-6 md:p-16 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
 <div>
-<h2 class="text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-8">BİZE <br/><span class="text-primary-container">KATIL</span></h2>
-<p class="text-xl text-on-surface-variant mb-12">Arkamızdaki beton duvar, önümüzdeki yeşil saha. Sen de bu duvarın bir parçası olmak istiyorsan formu doldur. Seçmelerimiz her ayın ilk Cumartesi günü merkez binamızda yapılır.</p>
+<h2 class="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-6 md:mb-8">BİZE <br/><span class="text-primary-container">KATIL</span></h2>
+<p class="text-base md:text-xl text-on-surface-variant mb-8 md:mb-12">Arkamızdaki beton duvar, önümüzdeki yeşil saha. Sen de bu duvarın bir parçası olmak istiyorsan formu doldur. Seçmelerimiz her ayın ilk Cumartesi günü merkez binamızda yapılır.</p>
 <div class="space-y-4">
 <div class="flex items-center gap-4">
 <span class="material-symbols-outlined text-primary-container" data-icon="location_on">location_on</span>
-<span class="font-bold uppercase tracking-tight">Çark Caddesi, Anbarlı Sokak No:54</span>
+<span class="font-bold uppercase tracking-tight text-sm md:text-base">Çark Caddesi, Anbarlı Sokak No:54</span>
 </div>
 <div class="flex items-center gap-4">
 <span class="material-symbols-outlined text-primary-container" data-icon="mail">mail</span>
-<span class="font-bold uppercase tracking-tight">taraftartrforum@tr-forum.com</span>
+<span class="font-bold uppercase tracking-tight text-sm md:text-base break-all">taraftartrforum@tr-forum.com</span>
 </div>
 </div>
 </div>
-<form class="bg-surface-container-low p-10 border-t-8 border-primary-container">
+<form class="bg-surface-container-low p-6 md:p-10 border-t-8 border-primary-container w-full">
 <div class="space-y-6">
 <div>
-<label class="block text-xs font-black uppercase tracking-widest mb-2 text-primary-container">ADINIZ SOYADINIZ</label>
-<input class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 text-white font-bold py-4" type="text"/>
+<label class="block text-[10px] md:text-xs font-black uppercase tracking-widest mb-2 text-primary-container">ADINIZ SOYADINIZ</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 text-white font-bold py-3 md:py-4" type="text"/>
 </div>
 <div>
-<label class="block text-xs font-black uppercase tracking-widest mb-2 text-primary-container">E-POSTA ADRESİ</label>
-<input class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 text-white font-bold py-4" type="email"/>
+<label class="block text-[10px] md:text-xs font-black uppercase tracking-widest mb-2 text-primary-container">E-POSTA ADRESİ</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 text-white font-bold py-3 md:py-4" type="email"/>
 </div>
 <div>
-<label class="block text-xs font-black uppercase tracking-widest mb-2 text-primary-container">TRİBÜN TECRÜBENİZ</label>
-<select class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 text-white font-bold py-4">
+<label class="block text-[10px] md:text-xs font-black uppercase tracking-widest mb-2 text-primary-container">TRİBÜN TECRÜBENİZ</label>
+<select class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 text-white font-bold py-3 md:py-4">
 <option>Yeni Başlıyorum</option>
 <option>1-5 Yıl</option>
 <option>5-10 Yıl</option>
@@ -310,25 +318,44 @@
 </select>
 </div>
 <div>
-<label class="block text-xs font-black uppercase tracking-widest mb-2 text-primary-container">NEDEN BİZ?</label>
-<textarea class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 text-white font-bold py-4 resize-none" rows="4"></textarea>
+<label class="block text-[10px] md:text-xs font-black uppercase tracking-widest mb-2 text-primary-container">NEDEN BİZ?</label>
+<textarea class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 text-white font-bold py-3 md:py-4 resize-none" rows="4"></textarea>
 </div>
-<button class="w-full bg-primary-container text-white font-black uppercase tracking-widest py-5 hover:bg-primary transition-colors text-lg" type="submit">BAŞVURUYU GÖNDER</button>
+<button class="w-full bg-primary-container text-white font-black uppercase tracking-widest py-4 md:py-5 hover:bg-primary transition-colors text-base md:text-lg" type="submit">BAŞVURUYU GÖNDER</button>
 </div>
 </form>
 </section>
 </main>
-<!-- Footer -->
-<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#0E0E0E] border-t-4 border-[#D72323]">
+
+<footer class="w-full py-10 md:py-12 px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 bg-[#0E0E0E] border-t-4 border-[#D72323] text-center md:text-left">
 <div class="text-xl font-black text-[#D72323] uppercase font-['Space_Grotesk']">TR-FORUM</div>
-<div class="flex flex-wrap justify-center gap-8">
+<div class="flex flex-col md:flex-row flex-wrap justify-center gap-4 md:gap-8">
 <a class="font-['Inter'] text-sm tracking-tight text-[#E6BDB8] hover:text-[#D72323] transition-colors" href="#">Gizlilik Politikası</a>
 <a class="font-['Inter'] text-sm tracking-tight text-[#E6BDB8] hover:text-[#D72323] transition-colors" href="#">TR-FORUM'UN Hizmetleri</a>
-<a class="font-['Inter'] text-sm tracking-tight text-[#E6BDB8] hover:text-[#D72323] transition-colors" href="#">Bizimle İletişime Geç</a>
+<a class="font-['Inter'] text-sm tracking-tight text-[#E6BDB8] hover:text-[#D72323] transition-colors" href="#">İletişim</a>
 <a class="font-['Inter'] text-sm tracking-tight text-[#E6BDB8] hover:text-[#D72323] transition-colors" href="#">Arşiv</a>
 </div>
-<div class="text-[#E6BDB8] font-['Inter'] text-sm tracking-tight opacity-80">
+<div class="text-[#E6BDB8] font-['Inter'] text-xs md:text-sm tracking-tight opacity-80 mt-2 md:mt-0">
             © 2024 TR-FORUM. ASLA PES ETME!
         </div>
 </footer>
+
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = mobileMenuBtn.querySelector('span');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        // Gizli sınıfını aç/kapat, esnek (flex) sınıfını ekle/çıkar
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+        
+        // İkonu değiştir (menü kapalıysa hamburger, açıksa çarpı)
+        if (mobileMenu.classList.contains('hidden')) {
+            menuIcon.textContent = 'menu';
+        } else {
+            menuIcon.textContent = 'close';
+        }
+    });
+</script>
 </body></html>
