@@ -76,9 +76,14 @@
 </head>
 <body class="bg-surface text-on-surface">
 
-<header class="fixed top-0 w-full flex justify-between items-center px-4 md:px-8 h-20 bg-[#131313] z-50">
-<div class="flex items-center gap-4 md:gap-8">
+<header class="fixed top-0 w-full flex justify-between items-center px-4 md:px-8 h-20 bg-[#131313] z-50 border-b border-surface-variant/30">
+<div class="flex items-center gap-3 md:gap-8">
+<button id="mobile-menu-btn" class="md:hidden flex items-center text-[#E6BDB8] hover:text-[#D72323] transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+
 <span class="text-xl md:text-3xl font-black text-[#D72323] tracking-tighter font-['Space_Grotesk'] uppercase">TR-FORUM</span>
+
 <nav class="hidden md:flex gap-6">
 <a class="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-[#D72323] border-b-4 border-[#D72323] pb-1" href="index.html">Anasayfa</a>
 <a class="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors" href="Topluluklar.html">Taraftar Grupları</a>
@@ -98,6 +103,17 @@
 </div>
 </div>
 </header>
+
+<div id="mobile-menu" class="hidden fixed top-20 left-0 w-full bg-[#131313] border-b-4 border-[#D72323] z-40 flex-col items-center py-6 gap-6 shadow-2xl md:hidden transition-all">
+<a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#D72323] border-b-2 border-[#D72323] pb-1 w-3/4 text-center" href="index.html">Anasayfa</a>
+<a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors w-3/4 text-center pb-1 border-b border-surface-variant/30" href="Topluluklar.html">Taraftar Grupları</a>
+<a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors w-3/4 text-center pb-1 border-b border-surface-variant/30" href="Etkinlikler.html">Etkinlikler</a>
+<a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors w-3/4 text-center pb-1" href="medya.html">Medya</a>
+<div class="flex items-center bg-surface-container-lowest px-4 py-3 mt-2 w-3/4 justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-base mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-bold tracking-widest text-on-surface uppercase w-full" placeholder="ARA..." type="text"/>
+</div>
+</div>
 
 <main class="pt-20">
 <section class="relative min-h-[100svh] md:min-h-0 md:h-[921px] w-full overflow-hidden flex items-end pb-12 md:pb-20 px-4 md:px-8 lg:px-16">
@@ -228,4 +244,24 @@
 </div>
 </div>
 </footer>
+
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = mobileMenuBtn.querySelector('span');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        // Gizli sınıfını aç/kapat, esnek (flex) sınıfını ekle/çıkar
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+        
+        // İkonu değiştir (menü kapalıysa hamburger, açıksa çarpı)
+        if (mobileMenu.classList.contains('hidden')) {
+            menuIcon.textContent = 'menu';
+        } else {
+            menuIcon.textContent = 'close';
+        }
+    });
+</script>
+
 </body></html>
