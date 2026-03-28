@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="tr"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TR-FORUM | ÜYE OL</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Space+Grotesk:wght@700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
       tailwind.config = {
@@ -76,6 +75,7 @@
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
         }
         body {
             background-color: #131313;
@@ -98,94 +98,115 @@
     </style>
 </head>
 <body class="custom-scrollbar">
-<!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-20 bg-[#131313] font-['Space_Grotesk'] uppercase tracking-tighter font-bold">
-    <button class="md:hidden flex items-center justify-center text-on-surface hover:text-primary-container transition-colors">
-  <span class="material-symbols-outlined text-3xl">menu</span>
-</button>
-<div class="text-2xl font-black italic tracking-tighter text-[#D72323]">TR-FORUM'A KATIL</div>
-<nav class="hidden md:flex gap-8 items-center h-full">
-<a class="text-[#E6BDB8] hover:text-white transition-colors" href="index.html">Anasayfa</a>
-</nav>
-<div class="flex items-center gap-6">
-<div class="flex gap-4">
-<span class="material-symbols-outlined text-[#E6BDB8] cursor-pointer hover:text-[#D72323] transition-colors">notifications</span>
-<span class="material-symbols-outlined text-[#E6BDB8] cursor-pointer hover:text-[#D72323] transition-colors">person</span>
+
+<nav class="fixed top-0 w-full z-[60] flex justify-between items-center px-4 md:px-8 h-20 bg-[#131313] font-['Space_Grotesk'] uppercase tracking-tighter font-bold border-b border-surface-variant/30">
+    <div class="flex items-center gap-2 md:gap-3">
+      <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center text-[#E6BDB8] hover:text-[#D72323] transition-colors focus:outline-none p-1">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+      <div class="text-xl md:text-2xl font-black italic tracking-tighter text-[#D72323]">TR-FORUM'A KATIL</div>
+    </div>
+  
+    <div class="hidden md:flex gap-8 items-center h-full">
+      <a class="text-[#E6BDB8] hover:text-white transition-colors" href="index.html">Anasayfa</a>
+      <a class="text-[#E6BDB8] hover:text-white transition-colors" href="Topluluklar.html">Taraftar Grupları</a>
+      <a class="text-[#E6BDB8] hover:text-white transition-colors" href="Etkinlikler.html">Etkinlikler</a>
+      <a class="text-[#E6BDB8] hover:text-white transition-colors" href="medya.html">Medya</a>
+    </div>
+  
+    <div class="flex items-center gap-3 md:gap-6">
+      <div class="hidden sm:flex gap-4">
+        <span class="material-symbols-outlined text-[#E6BDB8] cursor-pointer hover:text-[#D72323] transition-colors">notifications</span>
+        <span class="material-symbols-outlined text-[#E6BDB8] cursor-pointer hover:text-[#D72323] transition-colors">person</span>
+      </div>
+      <a class="bg-[#D72323] text-white px-4 md:px-6 py-2 text-xs md:text-sm font-black transition-transform active:scale-95 whitespace-nowrap" href="üyelik.html">ÜYE OL!</a>
+    </div>
+  </nav>
+
+<div id="mobile-menu" class="hidden fixed top-20 left-0 w-full bg-[#131313] border-b-4 border-[#D72323] z-[50] flex-col items-center py-8 gap-6 shadow-2xl md:hidden transition-all">
+    <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors w-3/4 text-center pb-2 border-b border-surface-variant/30" href="index.html">Anasayfa</a>
+    <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors w-3/4 text-center pb-2 border-b border-surface-variant/30" href="Topluluklar.html">Taraftar Grupları</a>
+    <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors w-3/4 text-center pb-2 border-b border-surface-variant/30" href="Etkinlikler.html">Etkinlikler</a>
+    <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#E6BDB8] hover:text-white transition-colors w-3/4 text-center pb-2 border-b border-surface-variant/30" href="medya.html">Medya</a>
+    <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter uppercase text-[#D72323] border-b-2 border-[#D72323] pb-2 w-3/4 text-center" href="üyelik.html">Üye Ol!</a>
+    
+    <div class="flex gap-8 mt-4">
+        <span class="material-symbols-outlined text-2xl text-[#E6BDB8] cursor-pointer hover:text-[#D72323]">notifications</span>
+        <span class="material-symbols-outlined text-2xl text-[#E6BDB8] cursor-pointer hover:text-[#D72323]">person</span>
+    </div>
 </div>
-<a class="bg-[#D72323] text-white px-6 py-2 text-sm font-black transition-transform active:scale-95" href="üyelik.html">ÜYE OL!</a>
-</div>
-</header>
+
 <main class="pt-20">
-<!-- Hero Section -->
-<section class="relative min-h-[614px] flex items-end overflow-hidden px-6 pb-12">
+<section class="relative min-h-[50svh] md:min-h-[614px] flex items-end overflow-hidden px-4 md:px-6 pb-10 md:pb-12">
 <div class="absolute inset-0 z-0">
 <img alt="Tribün Atmosferi" class="w-full h-full object-cover grayscale opacity-40 brightness-50" data-alt="Dramatize wide shot of football ultras in a dark stadium atmosphere with red flares lighting up the smoke and silhouettes holding giant flags" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzOQ-L8dUzYR3FIDiEYSlS8u97NNWS9AGSSUWcCXaVu9R6A_8688rgqT8evSLnmUgu52nidOXDQYnHD7oqSrlGyxTzBA_a-9XVRvCUrqXHeXJh56GlTT9JMzDQrTbiGSu8BTyLcQ-czE16-ImU9R45OE3qZcnI1r90aLTl_oG4vROn1-5CgbVxJQNSaNfdXvLZby7b3pQeyIwsfTjb5VJFYcWnTmKsuqtwJYI8-vwoJjvhUc96q4W5eqcvtrenKK7XY2lslmovDTws"/>
 <div class="absolute inset-0 bg-gradient-to-t from-[#131313] via-transparent to-transparent"></div>
 </div>
-<div class="relative z-10 w-full">
+<div class="relative z-10 w-full max-w-[1600px] mx-auto">
 <h1 class="font-headline text-huge font-black italic tracking-tighter uppercase text-white mb-4">
                     TRİBÜNE <br/> <span class="text-primary-container">KAYDOL</span>
 </h1>
-<p class="font-body text-on-surface-variant max-w-xl text-lg uppercase tracking-widest border-l-4 border-primary-container pl-4">
+<p class="font-body text-on-surface-variant max-w-xl text-sm md:text-lg uppercase tracking-widest border-l-4 border-primary-container pl-4">
                     Sadakat, tutku ve sonsuz destek. Bizimle omuz omuza yürümeye hazır mısın?
                 </p>
 </div>
 </section>
-<!-- Registration Form Section -->
-<section class="bg-surface-container-low py-24 px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
-<div class="md:col-span-4 space-y-8">
-<div class="sticky top-32">
-<h2 class="font-headline text-4xl font-black italic uppercase text-white leading-none mb-6">BAŞVURU SÜRECİ</h2>
-<p class="text-on-surface-variant font-body mb-8">
+
+<section class="bg-surface-container-low py-16 md:py-24 px-4 md:px-8">
+<div class="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12">
+<div class="lg:col-span-4 space-y-6 md:space-y-8">
+<div class="sticky top-28">
+<h2 class="font-headline text-3xl md:text-4xl font-black italic uppercase text-white leading-none mb-4 md:mb-6">BAŞVURU SÜRECİ</h2>
+<p class="text-on-surface-variant font-body mb-6 md:mb-8 text-sm md:text-base">
                         Kayıt formunu eksiksiz doldurduktan sonra yönetim kurulumuz başvurunu inceleyecek ve en kısa sürede seninle iletişime geçecektir.
                     </p>
-<div class="space-y-4">
+<div class="space-y-3 md:space-y-4">
 <div class="flex items-center gap-4 bg-surface-container-high p-4 border-l-2 border-primary-container">
-<span class="text-3xl font-black italic text-primary-container">01</span>
-<span class="font-bold uppercase tracking-tight">FORMU DOLDUR</span>
+<span class="text-2xl md:text-3xl font-black italic text-primary-container">01</span>
+<span class="font-bold uppercase tracking-tight text-sm md:text-base">FORMU DOLDUR</span>
 </div>
 <div class="flex items-center gap-4 bg-surface-container-lowest p-4 opacity-50">
-<span class="text-3xl font-black italic">02</span>
-<span class="font-bold uppercase tracking-tight">MÜLAKAT</span>
+<span class="text-2xl md:text-3xl font-black italic">02</span>
+<span class="font-bold uppercase tracking-tight text-sm md:text-base">MÜLAKAT</span>
 </div>
 <div class="flex items-center gap-4 bg-surface-container-lowest p-4 opacity-50">
-<span class="text-3xl font-black italic">03</span>
-<span class="font-bold uppercase tracking-tight">KABUL</span>
+<span class="text-2xl md:text-3xl font-black italic">03</span>
+<span class="font-bold uppercase tracking-tight text-sm md:text-base">KABUL</span>
 </div>
 </div>
 </div>
 </div>
-<div class="md:col-span-8">
-<form class="space-y-12 bg-surface-container-lowest p-8 md:p-12 shadow-2xl">
-<!-- Kişisel Bilgiler -->
+
+<div class="lg:col-span-8">
+<form class="space-y-10 md:space-y-12 bg-surface-container-lowest p-6 md:p-12 shadow-2xl">
 <div>
-<h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-primary-container mb-8 flex items-center gap-3">
-<span class="material-symbols-outlined">badge</span> KİŞİSEL BİLGİLER
+<h3 class="font-headline text-xl md:text-2xl font-bold uppercase tracking-tight text-primary-container mb-6 md:mb-8 flex items-center gap-2 md:gap-3">
+<span class="material-symbols-outlined text-2xl md:text-3xl">badge</span> KİŞİSEL BİLGİLER
                         </h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
 <div class="space-y-2">
-<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">AD SOYAD</label>
-<input class="w-full bg-surface-container-high border-none p-4 focus:ring-2 focus:ring-primary-container text-white placeholder:text-surface-container-highest uppercase" placeholder="İSİM SOYİSİM" type="text"/>
+<label class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-on-surface-variant">AD SOYAD</label>
+<input class="w-full bg-surface-container-high border-none p-3 md:p-4 focus:ring-2 focus:ring-primary-container text-white placeholder:text-surface-container-highest uppercase text-sm md:text-base" placeholder="İSİM SOYİSİM" type="text"/>
 </div>
 <div class="space-y-2">
-<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">E-POSTA</label>
-<input class="w-full bg-surface-container-high border-none p-4 focus:ring-2 focus:ring-primary-container text-white placeholder:text-surface-container-highest" placeholder="email@domain.com" type="email"/>
+<label class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-on-surface-variant">E-POSTA</label>
+<input class="w-full bg-surface-container-high border-none p-3 md:p-4 focus:ring-2 focus:ring-primary-container text-white placeholder:text-surface-container-highest text-sm md:text-base" placeholder="email@domain.com" type="email"/>
 </div>
-<div class="space-y-2 md:col-span-2">
-<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">TELEFON NUMARASI</label>
-<input class="w-full bg-surface-container-high border-none p-4 focus:ring-2 focus:ring-primary-container text-white placeholder:text-surface-container-highest" placeholder="+90 (___) ___ __ __" type="tel"/>
+<div class="space-y-2 sm:col-span-2">
+<label class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-on-surface-variant">TELEFON NUMARASI</label>
+<input class="w-full bg-surface-container-high border-none p-3 md:p-4 focus:ring-2 focus:ring-primary-container text-white placeholder:text-surface-container-highest text-sm md:text-base" placeholder="+90 (___) ___ __ __" type="tel"/>
 </div>
 </div>
 </div>
-<!-- Tribün Tecrübesi -->
+
 <div>
-<h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-primary-container mb-8 flex items-center gap-3">
-<span class="material-symbols-outlined">stadium</span> TRİBÜN TECRÜBESİ
+<h3 class="font-headline text-xl md:text-2xl font-bold uppercase tracking-tight text-primary-container mb-6 md:mb-8 flex items-center gap-2 md:gap-3">
+<span class="material-symbols-outlined text-2xl md:text-3xl">stadium</span> TRİBÜN TECRÜBESİ
                         </h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
 <div class="space-y-2">
-<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">KAÇ YILDIR MAÇA GİDİYORSUN?</label>
-<select class="w-full bg-surface-container-high border-none p-4 focus:ring-2 focus:ring-primary-container text-white uppercase">
+<label class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-on-surface-variant">KAÇ YILDIR MAÇA GİDİYORSUN?</label>
+<select class="w-full bg-surface-container-high border-none p-3 md:p-4 focus:ring-2 focus:ring-primary-container text-white uppercase text-sm md:text-base">
 <option>1-3 YIL</option>
 <option>4-7 YIL</option>
 <option>8+ YIL</option>
@@ -193,73 +214,93 @@
 </select>
 </div>
 <div class="space-y-2">
-<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">HANGİ BLOKLARDA BULUNUYORSUN?</label>
-<input class="w-full bg-surface-container-high border-none p-4 focus:ring-2 focus:ring-primary-container text-white placeholder:text-surface-container-highest uppercase" placeholder="Örn: Kuzey Üst, Blok 402" type="text"/>
+<label class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-on-surface-variant">HANGİ BLOKLARDA BULUNUYORSUN?</label>
+<input class="w-full bg-surface-container-high border-none p-3 md:p-4 focus:ring-2 focus:ring-primary-container text-white placeholder:text-surface-container-highest uppercase text-sm md:text-base" placeholder="Örn: Kuzey Üst, Blok 402" type="text"/>
 </div>
 </div>
 </div>
-<!-- Motivasyon -->
+
 <div>
-<h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-primary-container mb-8 flex items-center gap-3">
-<span class="material-symbols-outlined">campaign</span> MOTİVASYON
+<h3 class="font-headline text-xl md:text-2xl font-bold uppercase tracking-tight text-primary-container mb-6 md:mb-8 flex items-center gap-2 md:gap-3">
+<span class="material-symbols-outlined text-2xl md:text-3xl">campaign</span> MOTİVASYON
                         </h3>
 <div class="space-y-2">
-<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">NEDEN BU TARAFTAR GRUBUNA KATILMAK İSTİYORSUN?</label>
-<textarea class="w-full bg-surface-container-high border-none p-4 focus:ring-2 focus:ring-primary-container text-white placeholder:text-surface-container-highest uppercase" placeholder="HİKAYENİ VE TUTKUNU BİZİMLE PAYLAŞ..." rows="5"></textarea>
+<label class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-on-surface-variant">NEDEN BU TARAFTAR GRUBUNA KATILMAK İSTİYORSUN?</label>
+<textarea class="w-full bg-surface-container-high border-none p-3 md:p-4 focus:ring-2 focus:ring-primary-container text-white placeholder:text-surface-container-highest uppercase text-sm md:text-base" placeholder="HİKAYENİ VE TUTKUNU BİZİMLE PAYLAŞ..." rows="4"></textarea>
 </div>
 </div>
-<!-- Sosyal Medya -->
+
 <div>
-<h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-primary-container mb-8 flex items-center gap-3">
-<span class="material-symbols-outlined">share</span> SOSYAL MEDYA (OPSİYONEL)
+<h3 class="font-headline text-xl md:text-2xl font-bold uppercase tracking-tight text-primary-container mb-6 md:mb-8 flex items-center gap-2 md:gap-3">
+<span class="material-symbols-outlined text-2xl md:text-3xl">share</span> SOSYAL MEDYA (OPSİYONEL)
                         </h3>
 <div class="space-y-4">
-<div class="flex items-center gap-4 bg-surface-container-high p-2">
+<div class="flex items-center gap-2 md:gap-4 bg-surface-container-high p-2">
 <span class="material-symbols-outlined pl-2">alternate_email</span>
-<input class="w-full bg-transparent border-none p-2 focus:ring-0 text-white placeholder:text-surface-container-highest uppercase" placeholder="INSTAGRAM KULLANICI ADI" type="text"/>
+<input class="w-full bg-transparent border-none p-2 focus:ring-0 text-white placeholder:text-surface-container-highest uppercase text-sm md:text-base" placeholder="INSTAGRAM KULLANICI ADI" type="text"/>
 </div>
-<div class="flex items-center gap-4 bg-surface-container-high p-2">
+<div class="flex items-center gap-2 md:gap-4 bg-surface-container-high p-2">
 <span class="material-symbols-outlined pl-2">link</span>
-<input class="w-full bg-transparent border-none p-2 focus:ring-0 text-white placeholder:text-surface-container-highest uppercase" placeholder="X (TWITTER) KULLANICI ADI" type="text"/>
+<input class="w-full bg-transparent border-none p-2 focus:ring-0 text-white placeholder:text-surface-container-highest uppercase text-sm md:text-base" placeholder="X (TWITTER) KULLANICI ADI" type="text"/>
 </div>
 </div>
 </div>
-<!-- Onay Kutuları -->
-<div class="space-y-6 pt-6 border-t border-surface-container-highest">
-<label class="flex items-start gap-4 cursor-pointer group">
-<div class="relative flex items-center">
-<input class="peer h-6 w-6 appearance-none border-2 border-primary-container bg-transparent checked:bg-primary-container transition-all" type="checkbox"/>
-<span class="material-symbols-outlined absolute opacity-0 peer-checked:opacity-100 text-white text-base left-1">check</span>
+
+<div class="space-y-4 md:space-y-6 pt-6 border-t border-surface-container-highest">
+<label class="flex items-start gap-3 md:gap-4 cursor-pointer group">
+<div class="relative flex items-center mt-0.5">
+<input class="peer h-5 w-5 md:h-6 md:w-6 appearance-none border-2 border-primary-container bg-transparent checked:bg-primary-container transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute opacity-0 peer-checked:opacity-100 text-white text-sm md:text-base left-[3px] md:left-1">check</span>
 </div>
-<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-white transition-colors">Grup kurallarını, hiyerarşiyi ve tribün disiplinini kabul ediyorum.</span>
+<span class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-white transition-colors mt-0.5 leading-tight">Grup kurallarını, hiyerarşiyi ve tribün disiplinini kabul ediyorum.</span>
 </label>
-<label class="flex items-start gap-4 cursor-pointer group">
-<div class="relative flex items-center">
-<input class="peer h-6 w-6 appearance-none border-2 border-primary-container bg-transparent checked:bg-primary-container transition-all" type="checkbox"/>
-<span class="material-symbols-outlined absolute opacity-0 peer-checked:opacity-100 text-white text-base left-1">check</span>
+<label class="flex items-start gap-3 md:gap-4 cursor-pointer group">
+<div class="relative flex items-center mt-0.5">
+<input class="peer h-5 w-5 md:h-6 md:w-6 appearance-none border-2 border-primary-container bg-transparent checked:bg-primary-container transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute opacity-0 peer-checked:opacity-100 text-white text-sm md:text-base left-[3px] md:left-1">check</span>
 </div>
-<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-white transition-colors">Kişisel verilerimin işlenmesine ve grup iletişimi için kullanılmasına izin veriyorum.</span>
+<span class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-white transition-colors mt-0.5 leading-tight">Kişisel verilerimin işlenmesine ve grup iletişimi için kullanılmasına izin veriyorum.</span>
 </label>
 </div>
-<!-- Submit Button -->
-<button class="w-full bg-primary-container hover:bg-primary py-6 text-xl font-black italic tracking-tighter transition-all active:scale-95 flex justify-center items-center gap-3" type="submit">
-                        BAŞVURUYU GÖNDER <span class="material-symbols-outlined">send</span>
+
+<button class="w-full bg-primary-container hover:bg-primary py-4 md:py-6 text-lg md:text-xl font-black italic tracking-tighter transition-all active:scale-95 flex justify-center items-center gap-2 md:gap-3" type="submit">
+                        BAŞVURUYU GÖNDER <span class="material-symbols-outlined text-xl md:text-2xl">send</span>
 </button>
 </form>
 </div>
+</div>
 </section>
 </main>
-<!-- Footer -->
-<footer class="w-full py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8 bg-[#0E0E0E] font-['Inter'] text-xs tracking-widest uppercase border-t-4 border-[#1B1C1C]">
-<div class="text-lg font-black text-[#D72323]">THE TERRACE</div>
-<div class="flex flex-wrap justify-center gap-8">
+
+<footer class="w-full py-10 md:py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 bg-[#0E0E0E] font-['Inter'] text-[10px] md:text-xs tracking-widest uppercase border-t-4 border-[#1B1C1C] text-center md:text-left">
+<div class="text-xl md:text-lg font-black text-[#D72323] font-['Space_Grotesk'] italic">THE TERRACE</div>
+<div class="flex flex-col md:flex-row flex-wrap justify-center gap-4 md:gap-8">
 <a class="text-[#E6BDB8] hover:text-[#D72323] transition-colors" href="#">Gizlilik Politikası</a>
 <a class="text-[#E6BDB8] hover:text-[#D72323] transition-colors" href="#">TR-FORUM'un Hizmetleri</a>
-<a class="text-[#E6BDB8] hover:text-[#D72323] transition-colors" href="#">Bizimle İletişime Geç</a>
+<a class="text-[#E6BDB8] hover:text-[#D72323] transition-colors" href="#">İletişim</a>
 <a class="text-[#E6BDB8] hover:text-[#D72323] transition-colors" href="#">Arşiv</a>
 </div>
-<div class="text-[#E6BDB8]">
+<div class="text-[#E6BDB8] mt-2 md:mt-0 opacity-80">
             © 2024 TR-FORUM. ASLA PES ETME!
         </div>
 </footer>
+
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = mobileMenuBtn.querySelector('span');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        // Gizli sınıfını aç/kapat, esnek (flex) sınıfını ekle/çıkar
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+        
+        // İkonu değiştir (menü kapalıysa hamburger, açıksa çarpı)
+        if (mobileMenu.classList.contains('hidden')) {
+            menuIcon.textContent = 'menu';
+        } else {
+            menuIcon.textContent = 'close';
+        }
+    });
+</script>
 </body></html>
